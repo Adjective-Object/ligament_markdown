@@ -8,13 +8,14 @@ import traceback
 
 from ligament_precompiler_template import Precompiler
 from ligament.exceptions import TaskExecutionException
+from ligament.helpers import pdebug
 
 class Markdown(Precompiler):
     """ An SCSS precompiler, extending the precompiler provided by
         ligament_precompiler_template
     """
 
-    inline_template_string = "%s"
+    external_template_string = "%s"
     embed_template_string = """
 <html>
 <body>
@@ -25,7 +26,7 @@ class Markdown(Precompiler):
 
     default_kwargs = {
         "minify": False,
-        "inline": False,
+        "embed": False,
         "source_dir": "md",
         "target_dir": "html",
         "build_targets": ["*"],
@@ -41,8 +42,7 @@ class Markdown(Precompiler):
         del calling_kwargs["md_opts"]
 
         Precompiler.__init__(self, **calling_kwargs)
-
-        print self.file_watch_targets
+        self.compiler_name = "md"
 
     def out_path_of(self, in_path):
         relative_path = os.path.relpath(in_path, self.input_directory)

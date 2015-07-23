@@ -18,7 +18,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='ligament-markdown',
-    version='0.0.0.devl',
+    version='0.0.0.dev',
     description='A markdown build task for ligament',
     url='http://github.com/Adjective-Object/ligament_markdown',
     author='Adjective-Object',
@@ -31,11 +31,11 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
 
-        'License :: OSI Approved :: Apache 2',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 2.7'],
 
     keywords='ligament grunt build automation jinja',
-    install_requires=['ligament>=0.0.0.devl', 'Markdown>=2.6.2'],
+    install_requires=['ligament>=0.0.0.dev', 'Markdown>=2.6.2'],
 
     packages=["ligament_markdown"]
 )
