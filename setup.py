@@ -18,7 +18,7 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 
 setup(
     name='ligament-markdown',
-    version='0.0.3.dev',
+    version='0.0.4.dev',
     description='A markdown build task for ligament',
     url='http://github.com/Adjective-Object/ligament_markdown',
     author='Adjective-Object',
